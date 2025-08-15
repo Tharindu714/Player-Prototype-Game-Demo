@@ -4,6 +4,21 @@ import java.awt.*;
 import java.util.*;
 import java.util.List;
 
+/**
+ * Player Prototype Game Demo
+ * Single-file Java Swing application that demonstrates the Prototype design pattern
+ * for cloning Player objects (health, experience, level) so users can create many
+ * independent "what-if" copies and experiment without affecting the original.
+
+ * Design choices & antipattern considerations:
+ *  - Use a copy-constructor / explicit clone method instead of Object.clone() to avoid Cloneable pitfalls.
+ *  - Ensure immutable or deeply-copied fields if added (here primitive fields are fine).
+ *  - Avoid global mutable state; keep clones in a manager list.
+ *  - Avoid exposing internal state directly; use getter/setter methods when appropriate.
+
+ * Run:
+ * javac PlayerPrototypeGame.java * PlayerPrototypeGame
+ */
 
 /* ---------------- Prototype: Player ---------------- */
 class Player {
